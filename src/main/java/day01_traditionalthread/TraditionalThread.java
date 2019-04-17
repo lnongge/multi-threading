@@ -1,7 +1,7 @@
 package day01_traditionalthread;
 
 /**
- * @Description:
+ * @Description: 传统线程技术
  * @Author: lianws
  * @Date: 2019/4/16 20:05
  */
