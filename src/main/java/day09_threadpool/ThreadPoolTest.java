@@ -28,7 +28,7 @@ public class ThreadPoolTest {
             });
         }
         System.out.println("all of 10 task has commited!");
-        executorService.shutdown();
+        executorService.shutdown(); //关闭线程池
 
         // 2.定时线程池演示
         //(1)创建一个定时线程,10s后执行任务
