@@ -7,13 +7,12 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @Description: 线程池demo
- * 创建10个任务(就是Runable),1个任务执行10次
  * @Author: lianws
  * @Date: 2019/5/9 22:28
  */
 public class ThreadPoolTest {
     public static void main(String[] args) {
-        //1
+        //1.创建10个任务(就是Runable),1个任务执行10次 (分别用3中线程池运行,观察结果区别)
 //        ExecutorService executorService = Executors.newFixedThreadPool(3); //固定大小线程池
 //        ExecutorService executorService = Executors.newCachedThreadPool(); // 缓存线程池(无大小限制)
         ExecutorService executorService = Executors.newSingleThreadExecutor(); //单线程线程池(池中只有一个线程)
@@ -33,12 +32,12 @@ public class ThreadPoolTest {
 
         // 2.定时线程池演示
         //(1)创建一个定时线程,10s后执行任务
-//        Executors.newScheduledThreadPool(3).schedule(new Runnable() {
-//            @Override
-//            public void run() {
-//                System.out.println("bomb....!");
-//            }
-//        }, 10, TimeUnit.SECONDS);
+        Executors.newScheduledThreadPool(3).schedule(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("bomb....!");
+            }
+        }, 10, TimeUnit.SECONDS);
         
         //(2)创建一个定时线程,6s后执行任务,之后每个2s重复执行
         Executors.newScheduledThreadPool(3).scheduleAtFixedRate(new Runnable() {
